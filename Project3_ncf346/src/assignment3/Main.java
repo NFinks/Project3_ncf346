@@ -5,7 +5,7 @@
  * ncf346
  * <Student1 5-digit Unique No.>
  * Slip days used: <0>
- * Git URL:
+ * Git URL: https://github.com/NFinks/Project3_ncf346.git
  * Spring 2018
  */
 
