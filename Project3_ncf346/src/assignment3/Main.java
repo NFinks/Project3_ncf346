@@ -12,7 +12,9 @@
 
 package assignment3;
 import java.util.*;
+import java.lang.*;
 import java.io.*;
+
 
 public class Main {
 	
@@ -32,7 +34,7 @@ public class Main {
 			ps = System.out;			// default output to Stdout
 		}
 		initialize();
-		
+		parse(kb);
 		// TODO methods to read in words, output ladder
 	}
 	
@@ -40,16 +42,37 @@ public class Main {
 		// initialize your static variables or constants here.
 		// We will call this method before running our JUNIT tests.  So call it 
 		// only once at the start of main.
+		makeDictionary();
+		//parse(kb);
+		
 	}
 	
 	/**
 	 * @param keyboard Scanner connected to System.in
 	 * @return ArrayList of Strings containing start word and end word. 
 	 * If command is /quit, return empty ArrayList. 
+	 * I am assuming that the words must be of the same length
 	 */
 	public static ArrayList<String> parse(Scanner keyboard) {
-		// TO DO
-		return null;
+		
+		/** get first input, ignore white space, make all lower case. */
+		String input1 = keyboard.next().trim().toLowerCase(); 
+		
+		/** check if /quit. */
+		if (input1 == "/quit") { 
+			return null; 
+		}
+		
+		/**get second input, ignore white space, make all lower case*/
+		String input2 = keyboard.next().trim().toLowerCase(); 
+		
+		// create array list with two words
+		ArrayList<String> input = new ArrayList<String>(2);
+		input.add(input1);
+		input.add(input2);
+		
+		System.out.println(input1+ " " + input2);
+		return input;
 	}
 	
 	public static ArrayList<String> getWordLadderDFS(String start, String end) {
